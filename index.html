@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pogodnik</title>
+    <link rel="stylesheet" href="/styles/style.css" type="text/css">
+</head>
+<body>
+   <header>
+        <nav class = "navigation">
+            <h1 class = "title"><a href="/index.html">Pogodnik</a></h1>
+            <img src="/img/02d@2x.png" id="title-icon">
+            <a href="/favorite.html" id="favorite">Favorite</a>
+        </nav>
+    </header>
+    <main>
+        <div id="container-res" >
+            <div class="header">
+                <p class="nameCity"></p>
+            </div>
+            <div class="body-item">
+                <p class="icon"></p>
+                <p class="temp"></p>
+                <p class="weather"></p>
+                <img id="refresh" src="/img/icons8-refresh.gif">
+                <img id="add" src="/img/icons8-heart.gif">
+            </div>
+         </div>
+        <div class = "container">
+            <p>Enter your city:</p>
+            <input id="inputItem" type = "text" size="50" placeholder="Please enter the city name and click the 'Search' button"><br>
+            <p>
+            <button id = "button">Search</button>
+            </p>
+        </div>
+    </main>
+    <div id="preloader_malc">
+
+	<div>
+		Please wait, the site is loading ...
+	</div>
+
+</div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
