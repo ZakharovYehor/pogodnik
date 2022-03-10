@@ -3,7 +3,7 @@ window.onload = function () {
     document.getElementById("preloader_malc").style.display = "none";
   }, 400);
 };
-
+let cityToShow = 0;
 let citiesFav = [];
 citiesFav = JSON.parse(localStorage.getItem("cities"));
 console.log(citiesFav);
@@ -18,7 +18,7 @@ for (let i = 0; i < citiesFav.length; i++) {
       console.log(data);
       document.querySelector(
         ".city-list"
-      ).innerHTML += `<li class="city-item${i}"> <div id="container-res-fav" >
+      ).innerHTML += `<li id="city-item${i}"> <div id="container-res-fav" >
       <div class="header-fav">
           <p class="nameCity-fav${i}"></p>
       </div>
@@ -30,6 +30,7 @@ for (let i = 0; i < citiesFav.length; i++) {
           <img id="add-fav" src="/img/icons8-heart.gif">
       </div>
    </div></li>`;
+
       document.querySelector(`.nameCity-fav${i}`).textContent = data.name;
       document.querySelector(`.icon-fav${i}`).innerHTML =
         '<img src="https://openweathermap.org/img/wn/' +
@@ -40,6 +41,30 @@ for (let i = 0; i < citiesFav.length; i++) {
         Math.round(data.main.temp - 273) + "&deg";
       document.querySelector(`.weather-fav${i}`).textContent =
         data.weather[0]["main"];
+      document.getElementById(`city-item${i}`).style.display = "none";
+      document.getElementById(`city-item${0}`).style.display = "";
     })
     .catch(function () {});
 }
+
+const leftArrow = document.getElementById("back-item");
+const rightArrow = document.getElementById("next-item");
+
+rightArrow.onclick = () => {
+  leftArrow.removeAttribute("disabled");
+  document.getElementById(`city-item${cityToShow}`).style.display = "none";
+  cityToShow += 1;
+  document.getElementById(`city-item${cityToShow}`).style.display = "";
+  if (cityToShow === citiesFav.length - 1) {
+    rightArrow.setAttribute("disabled", "disabled");
+  }
+};
+leftArrow.onclick = () => {
+  rightArrow.removeAttribute("disabled");
+  document.getElementById(`city-item${cityToShow}`).style.display = "none";
+  cityToShow -= 1;
+  document.getElementById(`city-item${cityToShow}`).style.display = "";
+  if (cityToShow === 0) {
+    leftArrow.setAttribute("disabled", "true");
+  }
+};

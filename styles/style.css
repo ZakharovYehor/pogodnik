@@ -147,3 +147,47 @@ html {
   bottom: 0;
   margin: auto;
 }
+
+.city-list {
+  list-style-type: none;
+}
+.btn-slider {
+  position: relative;
+  left: 689px;
+}
+#back-item {
+  min-width: 100px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  color: #0d6efd;
+  background-color: #fff;
+  border: 1px solid #0d6efd;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#next-item {
+  min-width: 100px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  color: #0d6efd;
+  background-color: #fff;
+  border: 1px solid #0d6efd;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#back-item:hover {
+  color: #fff;
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+}
+#next-item:hover {
+  color: #fff;
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+}
